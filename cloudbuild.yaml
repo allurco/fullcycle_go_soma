@@ -1,8 +1,10 @@
 steps:
 - name: 'golang'
+  entrypoint: 'go'
   args: ['install', '.']
   env: ['PROJECT_ROOT=gosoma']
 - name: 'golang'
+  entrypoint: 'go'
   args: ['test', 'gosoma']
   env: ['PROJECT_ROOT=gosoma']
 - name: 'docker'
