@@ -2,11 +2,11 @@ steps:
 - name: 'golang'
   entrypoint: 'go'
   args: ['install', '.']
-  env: ['GOPATH=.', 'PROJECT_ROOT=gosoma']
+  env: ['GOPATH=go', 'PROJECT_ROOT=gosoma']
 - name: 'golang'
   entrypoint: 'go'
   args: ['test', 'gosoma']
-  env: ['GOPATH=.', 'PROJECT_ROOT=gosoma']
+  env: ['GOPATH=go', 'PROJECT_ROOT=gosoma']
 - name: 'docker'
   args: ['build', '--tag=gcr.io/$PROJECT_ID/gosoma', '.']
 images: ['gcr.io/$PROJECT_ID/gosoma']
