@@ -1,0 +1,10 @@
+steps:
+- name: 'gcr.io/cloud-builders/go'
+  args: ['install', '.']
+  env: ['PROJECT_ROOT=gosoma']
+- name: 'gcr.io/cloud-builders/go'
+  args: ['test', 'gosoma']
+  env: ['PROJECT_ROOT=gosoma']
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['build', '--tag=gcr.io/$PROJECT_ID/gosoma', '.']
+images: ['gcr.io/$PROJECT_ID/gosoma']
